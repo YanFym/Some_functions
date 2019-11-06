@@ -1,4 +1,4 @@
-class My_funtions
+class My_functions
   def self.max_multiplication(string)
   	string.split(/[a-zA-z]/)
   	      .uniq.delete_if {|x| x.length <4 }
@@ -8,5 +8,12 @@ class My_funtions
   	      .map {|x| x.to_i}
   	      .reduce(:*)}
   	      .max
+  end
+
+  def self.my_sort(array)
+  array.map {|x| x.to_s(2)}
+       .sort_by {|x| x.split('')
+       .map(&:to_i).sum}
+       .map {|q| q.to_i(2)}
   end
 end
